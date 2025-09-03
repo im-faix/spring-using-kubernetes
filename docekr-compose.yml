@@ -1,0 +1,14 @@
+version : "3.8"
+services:
+  webapp:
+    build :
+      context : .
+    container_name : webapp
+    restart: always
+    ports:
+    - "9092:9092"
+    network:
+      webapp
+
+networks:
+  webapp:
