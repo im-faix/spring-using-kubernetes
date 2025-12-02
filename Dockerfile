@@ -6,7 +6,7 @@ RUN mvn clean package
 RUN mv target/*.jar target/app.jar
 
 
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk
 WORKDIR /basic
 COPY --from=stage1 /app/target/app.jar .
 CMD ["java","-jar", "app.jar"]
