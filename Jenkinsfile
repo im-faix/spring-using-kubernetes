@@ -39,6 +39,7 @@ pipeline
             steps
             {
                 sh 'docker run -d -p 9090:9090 webapp:$BUILD_ID'
+                echo "docker image push to repository"
             }
         }
         stage('listing')
