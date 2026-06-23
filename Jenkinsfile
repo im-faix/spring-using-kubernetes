@@ -17,7 +17,7 @@ pipeline
 	{
 		steps
 		{
-			sh 'docker stop spring-webapp'
+			sh 'docker stop spring-webapp || true'
 		}
 	}
         stage('cloning')
@@ -40,7 +40,7 @@ pipeline
         {
             steps
             {
-                sh "docker run -d -p 9090:9090 webapp:$version"
+//                sh "docker run -d -p 9090:9090 webapp:$version"
                 echo "docker image push to repository"
             }
         }
