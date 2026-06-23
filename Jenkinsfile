@@ -7,7 +7,6 @@ pipeline
 =======
         environment {
         DOCKER_USER = 'faixan01'
-        DOCKER_PASS = 'your_password'
     }
 >>>>>>> 0ffb975 (update Jenkins file)
     
