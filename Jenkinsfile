@@ -51,6 +51,7 @@ pipeline
                 sh 'docker images'
                 echo ""
                 sh 'docker ps '
+		sh 'ls -lash'
             }
         }
 	stage('Docker run')
