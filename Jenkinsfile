@@ -3,6 +3,13 @@ def version = 'v1.0'
 pipeline
 {
     agent any
+<<<<<<< HEAD
+=======
+        environment {
+        DOCKER_USER = 'faixan01'
+        DOCKER_PASS = 'your_password'
+    }
+>>>>>>> 0ffb975 (update Jenkins file)
     
     stages
     {
