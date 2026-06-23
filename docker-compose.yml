@@ -1,7 +1,7 @@
 version : "3.8"
 services:
   webapp:
-    image: faixan01/spring-webapp:7
+    image: faixan01/spring-webapp:v1.0
     container_name : webapp
     restart: always
     ports:

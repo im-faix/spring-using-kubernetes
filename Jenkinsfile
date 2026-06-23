@@ -1,3 +1,5 @@
+def version = 'v1.0'
+
 pipeline
 {
     agent any
@@ -30,7 +32,7 @@ pipeline
         {
             steps
             {
-                sh 'docker build -t webapp:$BUILD_ID .'
+                sh "docker build -t webapp:$version ."
                 echo "image created "
             }
         }
@@ -38,7 +40,7 @@ pipeline
         {
             steps
             {
-                sh 'docker run -d -p 9090:9090 webapp:$BUILD_ID'
+                sh "docker run -d -p 9090:9090 webapp:$version"
                 echo "docker image push to repository"
             }
         }
@@ -51,5 +53,14 @@ pipeline
                 sh 'docker ps '
             }
         }
+	stage('Docker run')
+	{
+	    steps
+	   {
+		sh 'docker compose pull '
+		sh 'docker compose up -d '
+	   }
+	}
+		
     }
 }
